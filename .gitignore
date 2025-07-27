@@ -1,0 +1,55 @@
+# 编译生成的二进制文件和库
+*.o
+*.a
+*.so
+*.out
+*.exe
+*.dll
+a.out
+core
+
+# 预编译头文件
+*.gch
+*.pch
+
+# 依赖文件
+*.d
+
+# 构建目录和构建系统文件
+build/
+*/build/
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+Makefile
+Makefile.in
+*.sln
+*.vcxproj*
+*.user
+x64/
+x86/
+bin/
+lib/
+
+# 包管理器和依赖目录
+conanbuildinfo.txt
+conaninfo.txt
+.vs/
+.vscode/
+.idea/
+.clion/
+
+# 编辑器临时文件
+*~
+*.swp
+*.swo
+*.orig
+\#*#
+.#*
+.*.kate-swp
+
+# 项目特定可执行文件
+# !/path/to/keep/specific/executable   # 取消注释并替换为需要保留的路径
+
+# 忽略所有位置名为 'main' 的可执行文件
+**/main
