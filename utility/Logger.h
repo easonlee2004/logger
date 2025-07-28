@@ -25,7 +25,9 @@ public:
     void close(const std::string &filename); // 关闭文件
 
     void log(Level level, const char *file, int line, const char *format, ...);
-
+private:
+    Logger();
+    ~Logger();
 private:
     std::string m_filename; // 文件名称字符串
     std::ofstream m_fout; // 输出流

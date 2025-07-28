@@ -53,3 +53,6 @@ conaninfo.txt
 
 # 忽略所有位置名为 'main' 的可执行文件
 **/main
+
+# 日志文件
+*.log
