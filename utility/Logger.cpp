@@ -62,5 +62,24 @@ void Logger::log(Level level, const char *file, int line, const char *format, ..
     memset(timestamp, 0, sizeof(timestamp));
     strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %H:%M:%S", ptm); // format传入时间输出格式
 
-    std::cout << timestamp << std::endl;
+    const char *fmt = "%s %s %s:%d";
+    int size = snprintf(NULL, 0, fmt, timestamp, s_level[level], file, line);
+    if (size > 0)
+    {
+        char *buffer = new char[size + 1]; // 最后一位\0防止字符串溢出
+        memset(buffer, 0, sizeof(buffer));
+        snprintf(buffer, size + 1, fmt, timestamp, s_level[level], file, line);
+        buffer[size] = '\0';
+
+        std::cout << buffer << std::endl;
+        m_fout << buffer;
+        delete buffer;
+    }
+    m_fout.flush();
+
+    // std::cout << timestamp << std::endl;
+    // std::cout << file << std::endl;
+    // std::cout << line << std::endl;
+    // std::cout << format <<std::endl;
+
 }
